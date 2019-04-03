@@ -44,7 +44,7 @@ namespace DijkstraNet
 
 			var parent = (index - 1) / 2;
 
-			if (array[parent].CompareTo(array[index]) < 0)
+			if (array[parent].CompareTo(array[index]) > 0)
 			{
 				array.Swap(parent,index);
 				array.MinHeapifyUp(parent);

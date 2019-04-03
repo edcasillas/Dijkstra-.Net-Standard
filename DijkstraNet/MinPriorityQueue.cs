@@ -13,7 +13,7 @@ namespace DijkstraNet
 		private T[] data;
 		private int count;
 
-		public MinPriorityQueue(IEnumerable<T> source)
+		public MinPriorityQueue(IEnumerable<T> source = null)
 		{		
 			if (source == null || !source.Any())
 			{
@@ -37,7 +37,7 @@ namespace DijkstraNet
 			if(IsEmpty()) throw new InvalidOperationException();
 			var result = Peek();
 			data[0] = data[--count];
-			data.MinHeapifyDown(0, count);
+			if (!IsEmpty()) data.MinHeapifyDown(0, count);
 			return result;
 		}
 
