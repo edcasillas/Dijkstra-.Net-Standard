@@ -23,7 +23,8 @@ namespace DijkstraNet
 			}
 
 			count = source.Count();
-			data = source.ToArray();
+			data = new T[count * 2];
+			for (var i = 0; i < source.Count(); i++) data[i] = source.ElementAt(i);
 
 			data.MinHeapify();
 		}
