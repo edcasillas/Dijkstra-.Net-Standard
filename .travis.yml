@@ -1,8 +1,11 @@
 language: csharp
 mono: none
+sudo: required
+dist: xenial
 dotnet: 2.2
-solution: solution-name.sln
+#solution: solution-name.sln
 script:
-  - sudo apt-get install -y --force-yes -q -qq dpkg  # to upgrade to dpkg >= 1.17.5ubuntu5.8, which fixes https://bugs.launchpad.net/ubuntu/+source/dpkg/+bug/1730627 || Taken from https://github.com/travis-ci/travis-ci/issues/9361
+  #- sudo apt-get install -y --force-yes -q -qq dpkg  # to upgrade to dpkg >= 1.17.5ubuntu5.8, which fixes https://bugs.launchpad.net/ubuntu/+source/dpkg/+bug/1730627 || Taken from https://github.com/travis-ci/travis-ci/issues/9361
   - dotnet restore
-  - dotnet test
+  - dotnet build
+  #- dotnet test
