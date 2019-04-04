@@ -18,7 +18,7 @@ namespace DijkstraNet
 		{
 			if(!nodes.ContainsKey(from)) AddNode(from);
 			if (!nodes.ContainsKey(to)) AddNode(to);
-			//nodes[from].Add(new WeightedEdge<TData,TWeight>(from, to, weight));
+			nodes[from].Add(new WeightedEdge<TData,TWeight>(from, to, weight));
 			if (!directed) AddEdge(to, from, weight);
 		}
 	}
