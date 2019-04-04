@@ -6,7 +6,7 @@ namespace DijkstraNet
 	public class WeightedGraph<TData, TWeight>
 	{
 		private readonly IDictionary<TData, ICollection<WeightedEdge<TData, TWeight>>> nodes = new Dictionary<TData, ICollection<WeightedEdge<TData, TWeight>>>();
-		private readonly ICollection<WeightedEdge<TData, TWeight>> edges = new List<WeightedEdge<TData, TWeight>>();
+		//private readonly ICollection<WeightedEdge<TData, TWeight>> edges = new List<WeightedEdge<TData, TWeight>>();
 
 		public void AddNode(TData data)
 		{
