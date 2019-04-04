@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DijkstraNet", "DijkstraNet\DijkstraNet.csproj", "{FCF72395-A486-4F81-92C8-A3561A649295}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DijkstraNet", "DijkstraNet\DijkstraNet.csproj", "{FCF72395-A486-4F81-92C8-A3561A649295}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DijkstraNetTests", "DijkstraNetTests\DijkstraNetTests.csproj", "{884CAF0D-C9D1-4030-A0C1-DF0DDAF09B9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DijkstraNetTests", "DijkstraNetTests\DijkstraNetTests.csproj", "{884CAF0D-C9D1-4030-A0C1-DF0DDAF09B9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{797C1AA4-5AF7-4799-80F3-B95B59988AE1}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

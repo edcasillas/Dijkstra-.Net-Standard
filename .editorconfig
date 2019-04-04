@@ -1,0 +1,20 @@
+# https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+
+# top-most EditorConfig file
+root = true
+
+[*.cs]
+end_of_line = crlf
+insert_final_newline = false
+charset = utf-8
+ident_style = tab
+
+# Sort using and Import directives with System.* appearing first
+dotnet_sort_system_directives_first = true
+
+csharp_prefer_braces = true:none
+csharp_new_line_before_open_brace = none:suggestion
+csharp_new_line_before_else = false:suggestion
+csharp_new_line_before_catch = false:suggestion
+csharp_new_line_before_finally = false:suggestion
+csharp_new_line_before_members_in_object_initializers = true
