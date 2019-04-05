@@ -10,11 +10,11 @@ namespace DijkstraNet {
 			vertices.Add(data, new List<WeightedEdge<TData>>());
 		}
 
-		public void AddEdge(TData from, TData to, float weight, bool directed = true) {
+		public void AddEdge(TData from, TData to, float weight, bool directed = false) {
 			if (!vertices.ContainsKey(from)) AddVertex(from);
 			if (!vertices.ContainsKey(to)) AddVertex(to);
 			vertices[from].Add(new WeightedEdge<TData>(from, to, weight));
-			if (!directed) AddEdge(to, from, weight);
+			if (!directed) AddEdge(to, from, weight, true);
 		}
 
 		public bool HasVertex(TData data) => vertices.ContainsKey(data);
