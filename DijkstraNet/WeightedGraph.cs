@@ -2,21 +2,26 @@ using System;
 using System.Collections.Generic;
 
 namespace DijkstraNet {
-	public class WeightedGraph<TData, TWeight> {
-		private readonly IDictionary<TData, ICollection<WeightedEdge<TData, TWeight>>> vertices = new Dictionary<TData, ICollection<WeightedEdge<TData, TWeight>>>();
+	public class WeightedGraph<TData> {
+		private readonly IDictionary<TData, ICollection<WeightedEdge<TData>>> vertices = new Dictionary<TData, ICollection<WeightedEdge<TData>>>();
 
 		public void AddVertex(TData data) {
 			if (vertices.ContainsKey(data)) throw new InvalidOperationException("Data already exists in the graph.");
-			vertices.Add(data, new List<WeightedEdge<TData, TWeight>>());
+			vertices.Add(data, new List<WeightedEdge<TData>>());
 		}
 
-		public void AddEdge(TData from, TData to, TWeight weight, bool directed = true) {
+		public void AddEdge(TData from, TData to, float weight, bool directed = true) {
 			if (!vertices.ContainsKey(from)) AddVertex(from);
 			if (!vertices.ContainsKey(to)) AddVertex(to);
-			vertices[from].Add(new WeightedEdge<TData, TWeight>(from, to, weight));
+			vertices[from].Add(new WeightedEdge<TData>(from, to, weight));
 			if (!directed) AddEdge(to, from, weight);
 		}
 
 		public bool HasVertex(TData data) => vertices.ContainsKey(data);
+
+		public IEnumerable<WeightedEdge<TData>> GetEdgesFrom(TData vertex) {
+			if (!HasVertex(vertex)) return null;
+			return vertices[vertex];
+		}
 	}
 }
